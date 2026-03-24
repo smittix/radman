@@ -13,6 +13,8 @@ MODULE_CACHE="$CACHE_HOME/.cache/clang/ModuleCache"
 SWIFTPM_CACHE="$ROOT_DIR/.swiftpm-cache"
 SWIFTPM_CONFIG="$ROOT_DIR/.swiftpm-config"
 SWIFTPM_SECURITY="$ROOT_DIR/.swiftpm-security"
+APP_VERSION="${APP_VERSION:-0.1.1}"
+APP_BUILD="${APP_BUILD:-1}"
 
 mkdir -p "$MODULE_CACHE" "$SWIFTPM_CACHE" "$SWIFTPM_CONFIG" "$SWIFTPM_SECURITY"
 export HOME="$CACHE_HOME"
@@ -43,7 +45,7 @@ cp "$EXECUTABLE_PATH" "$APP_DIR/Contents/MacOS/$APP_NAME"
 chmod +x "$APP_DIR/Contents/MacOS/$APP_NAME"
 cp "$ICON_PATH" "$APP_DIR/Contents/Resources/AppIcon.icns"
 
-cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
+cat > "$APP_DIR/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -65,9 +67,9 @@ cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.1.0</string>
+    <string>${APP_VERSION}</string>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>${APP_BUILD}</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>NSHighResolutionCapable</key>
