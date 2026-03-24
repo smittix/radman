@@ -1,5 +1,7 @@
 # RadMan
 
+> RadMan is still in active development, so please make a full backup before using it with your radio and use it at your own risk, as unfinished features could still lead to lost data, changed settings, or other unexpected behavior.
+
 RadMan is a native macOS radio memory and activity manager focused on the Radtel RT-950 Pro.
 
 The current native direction is:
